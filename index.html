@@ -3,41 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCO2 | Negative Carbon Solutions</title>
+    <title>NCO2 | Drone-Based Reforestation Technology</title>
+    <meta name="description" content="Pioneering drone-based reforestation technology for large-scale ecosystem restoration. Serving mining, forestry, and carbon development sectors.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* NCO2 Brand Colors */
             --nco2-blue: #152F45;
             --nco2-orange: #e6990b;
-            --nco2-gray: #999999;
-            --nco2-white: #ffffff;
-            
-            /* Derived Colors */
             --primary-dark: #0a1925;
             --primary-blue: #152F45;
             --accent-orange: #e6990b;
             --accent-orange-light: #f5b642;
-            --accent-orange-dark: #c4820a;
-            
-            /* Glass Effects */
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-bg-light: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-border-highlight: rgba(255, 255, 255, 0.15);
-            --glass-hover: rgba(255, 255, 255, 0.1);
-            
-            /* Text */
+            --glass-hover: rgba(255, 255, 255, 0.12);
             --text-primary: #ffffff;
             --text-secondary: rgba(255, 255, 255, 0.75);
             --text-muted: rgba(255, 255, 255, 0.5);
-            
-            /* Gradients */
             --gradient-orange: linear-gradient(135deg, #e6990b 0%, #f5b642 50%, #e6990b 100%);
-            --gradient-blue-orange: linear-gradient(135deg, #1a3a54 0%, #152F45 50%, #0f2233 100%);
-            --gradient-glow: radial-gradient(ellipse at center, rgba(230, 153, 11, 0.2) 0%, transparent 70%);
         }
 
         * {
@@ -51,25 +37,21 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--primary-dark);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Animated Background */
+        /* ===== BACKGROUND ===== */
         .bg-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            z-index: -2;
             background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-dark) 100%);
         }
 
@@ -77,74 +59,11 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 20% 20%, rgba(230, 153, 11, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 80%, rgba(21, 47, 69, 0.3) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 100%, rgba(230, 153, 11, 0.05) 0%, transparent 40%);
+            background: radial-gradient(ellipse at 20% 20%, rgba(230, 153, 11, 0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(21, 47, 69, 0.3) 0%, transparent 50%);
         }
 
-        .floating-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .orb-1 {
-            width: 700px;
-            height: 700px;
-            background: rgba(230, 153, 11, 0.12);
-            top: -250px;
-            left: -150px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: rgba(21, 47, 69, 0.4);
-            bottom: -150px;
-            right: -100px;
-            animation-delay: -8s;
-        }
-
-        .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: rgba(230, 153, 11, 0.08);
-            top: 60%;
-            left: 40%;
-            animation-delay: -15s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(60px, -40px) scale(1.05); }
-            50% { transform: translate(30px, 50px) scale(0.95); }
-            75% { transform: translate(-40px, 25px) scale(1.02); }
-        }
-
-        /* Grid Pattern Overlay */
-        .grid-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 80px 80px;
-            mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
-        }
-
-        /* Noise Texture */
-        .noise {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.025;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        }
-
-        /* Navigation */
+        /* ===== NAVIGATION ===== */
         .nav {
             position: fixed;
             top: 0;
@@ -159,6 +78,7 @@
             background: rgba(10, 25, 37, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
+            padding: 0.75rem 4rem;
         }
 
         .nav-content {
@@ -185,25 +105,20 @@
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--primary-dark);
-            position: relative;
-            overflow: hidden;
             box-shadow: 0 4px 20px rgba(230, 153, 11, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
         }
 
         .logo-text {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
         }
 
         .logo-text span {
@@ -221,19 +136,21 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
+            bottom: 0;
+            left: 50%;
             width: 0;
             height: 2px;
             background: var(--accent-orange);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .nav-links a:hover {
@@ -246,25 +163,23 @@
 
         .nav-cta {
             padding: 0.75rem 1.5rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 100px;
-            color: var(--text-primary);
-            font-weight: 600;
+            background: var(--gradient-orange);
+            border: none;
+            border-radius: 8px;
+            color: var(--primary-dark);
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
             font-size: 0.9rem;
             font-family: inherit;
         }
 
         .nav-cta:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent-orange);
-            box-shadow: 0 0 30px rgba(230, 153, 11, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(230, 153, 11, 0.4);
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -284,14 +199,12 @@
         }
 
         .hero-text {
-            animation: fadeInUp 1s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeIn 0.8s ease forwards;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
+        @keyframes fadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -305,46 +218,30 @@
             padding: 0.5rem 1rem;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            border-radius: 100px;
+            border-radius: 6px;
             font-size: 0.85rem;
             color: var(--accent-orange);
             margin-bottom: 1.5rem;
             backdrop-filter: blur(10px);
-            font-weight: 500;
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--accent-orange);
-            border-radius: 50%;
-            animation: pulse 2s ease infinite;
-            box-shadow: 0 0 10px var(--accent-orange);
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.3); }
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(2.75rem, 5vw, 4.25rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
+            letter-spacing: -2px;
         }
 
         .hero h1 .highlight {
-            background: var(--gradient-orange);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent-orange);
         }
 
         .hero p {
-            font-size: 1.125rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
             max-width: 520px;
@@ -358,120 +255,106 @@
         }
 
         .btn-primary {
-            padding: 0.875rem 1.75rem;
+            padding: 1rem 2rem;
             background: var(--gradient-orange);
             border: none;
-            border-radius: 100px;
+            border-radius: 8px;
             color: var(--primary-dark);
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             text-decoration: none;
             box-shadow: 0 4px 20px rgba(230, 153, 11, 0.3);
             font-family: inherit;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(230, 153, 11, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(230, 153, 11, 0.4);
         }
 
         .btn-secondary {
-            padding: 0.875rem 1.75rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 100px;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid var(--glass-border);
+            border-radius: 8px;
             color: var(--text-primary);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             text-decoration: none;
             font-family: inherit;
         }
 
         .btn-secondary:hover {
-            background: var(--glass-hover);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: var(--glass-bg);
+            border-color: var(--accent-orange);
         }
 
-        /* Calculator Card */
+        /* ===== CALCULATOR CARD ===== */
         .hero-visual {
             position: relative;
-            animation: fadeInUp 1s ease 0.3s backwards;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeIn 0.8s ease 0.2s forwards;
         }
 
         .calculator-card {
             background: var(--glass-bg-light);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border-radius: 16px;
             padding: 2rem;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .calculator-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        }
-
-        .calculator-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at top right, rgba(230, 153, 11, 0.08) 0%, transparent 60%);
-            pointer-events: none;
+        .calculator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
         }
 
         .calculator-header {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
 
         .calculator-icon {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             background: var(--gradient-orange);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
             box-shadow: 0 4px 15px rgba(230, 153, 11, 0.3);
+        }
+
+        .calculator-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-dark);
         }
 
         .calculator-title {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--text-primary);
         }
 
         .calculator-subtitle {
             font-size: 0.85rem;
             color: var(--text-secondary);
-        }
-
-        .calculator-content {
-            position: relative;
-            z-index: 1;
         }
 
         .calc-tabs {
@@ -480,15 +363,15 @@
             margin-bottom: 1.5rem;
             background: rgba(0, 0, 0, 0.2);
             padding: 4px;
-            border-radius: 12px;
+            border-radius: 8px;
         }
 
         .calc-tab {
             flex: 1;
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1rem;
             background: transparent;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             color: var(--text-secondary);
             font-weight: 600;
             font-size: 0.875rem;
@@ -500,12 +383,6 @@
         .calc-tab.active {
             background: var(--accent-orange);
             color: var(--primary-dark);
-            box-shadow: 0 2px 10px rgba(230, 153, 11, 0.3);
-        }
-
-        .calc-tab:hover:not(.active) {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.05);
         }
 
         .calc-input-group {
@@ -526,10 +403,10 @@
 
         .calc-input {
             width: 100%;
-            padding: 1rem 1.25rem;
+            padding: 1rem 4rem 1rem 1.25rem;
             background: rgba(0, 0, 0, 0.25);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
+            border-radius: 8px;
             color: var(--text-primary);
             font-size: 1.5rem;
             font-weight: 700;
@@ -541,11 +418,6 @@
             outline: none;
             border-color: var(--accent-orange);
             box-shadow: 0 0 0 3px rgba(230, 153, 11, 0.15);
-        }
-
-        .calc-input::placeholder {
-            color: var(--text-muted);
-            font-weight: 500;
         }
 
         .calc-unit {
@@ -562,7 +434,6 @@
             width: 100%;
             height: 6px;
             -webkit-appearance: none;
-            appearance: none;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
             margin-top: 0.75rem;
@@ -571,49 +442,40 @@
 
         .calc-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            appearance: none;
             width: 20px;
             height: 20px;
             background: var(--gradient-orange);
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(230, 153, 11, 0.4);
-            transition: transform 0.2s ease;
-        }
-
-        .calc-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
         }
 
         .calc-result {
             background: rgba(230, 153, 11, 0.1);
             border: 1px solid rgba(230, 153, 11, 0.2);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
         }
 
         .calc-result-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         .calc-result-value {
-            font-size: 2.75rem;
+            font-size: 3rem;
             font-weight: 800;
-            background: var(--gradient-orange);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
+            color: var(--accent-orange);
+            line-height: 1.1;
         }
 
         .calc-result-unit {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
             margin-top: 0.25rem;
             font-weight: 500;
@@ -632,49 +494,167 @@
 
         .calc-info svg {
             flex-shrink: 0;
+            opacity: 0.7;
         }
 
-        /* Video Section */
-        .video-section {
+        /* ===== PARTNERS SECTION ===== */
+        .partners {
+            padding: 4rem;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .partners-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .partner-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
             padding: 6rem 4rem;
-            position: relative;
         }
 
-        .video-container {
-            max-width: 1100px;
+        .stats-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .video-header {
+        .stats-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 153, 11, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(230, 153, 11, 0.1);
+            border: 1px solid rgba(230, 153, 11, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--accent-orange);
+        }
+
+        .stat-value {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 6rem 4rem;
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .video-card {
             background: var(--glass-bg-light);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 1.5rem;
-            position: relative;
+            border-radius: 16px;
+            padding: 1rem;
             overflow: hidden;
-        }
-
-        .video-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
         }
 
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
         }
 
@@ -687,37 +667,9 @@
             border: none;
         }
 
-        /* Features Section */
+        /* ===== FEATURES ===== */
         .features {
             padding: 6rem 4rem;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-orange);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 1rem;
-        }
-
-        .section-desc {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
         }
 
         .features-grid {
@@ -725,57 +677,47 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .feature-card {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .feature-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: rgba(230, 153, 11, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
-                        0 0 40px rgba(230, 153, 11, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
 
         .feature-icon {
             width: 56px;
             height: 56px;
             background: var(--gradient-orange);
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
-            font-size: 1.5rem;
-            position: relative;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 15px rgba(230, 153, 11, 0.3);
         }
 
-        .feature-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
-            border-radius: 14px;
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-dark);
         }
 
         .feature-title {
@@ -786,230 +728,141 @@
 
         .feature-desc {
             color: var(--text-secondary);
-            font-size: 0.925rem;
+            font-size: 0.95rem;
             line-height: 1.7;
         }
 
-        /* Impact Section */
-        .impact {
+        /* ===== TECHNOLOGY SECTION ===== */
+        .technology {
             padding: 6rem 4rem;
-            position: relative;
         }
 
-        .impact-container {
+        .technology-container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .impact-grid {
+        .technology-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .impact-visual {
-            position: relative;
-        }
-
-        .impact-card-large {
-            background: var(--glass-bg-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .impact-card-large::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        }
-
-        .impact-card-large::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at top right, rgba(230, 153, 11, 0.12) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .impact-number {
-            font-size: 4.5rem;
+        .technology-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 800;
-            background: var(--gradient-orange);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .impact-unit {
-            font-size: 1.75rem;
-            color: var(--text-secondary);
-            -webkit-text-fill-color: var(--text-secondary);
-            margin-left: 0.25rem;
-        }
-
-        .impact-label {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-top: 0.75rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .impact-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .metric-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 14px;
-            padding: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .metric-card:hover {
-            border-color: rgba(230, 153, 11, 0.3);
-            background: rgba(230, 153, 11, 0.05);
-        }
-
-        .metric-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-        }
-
-        .metric-label {
-            font-size: 0.825rem;
-            color: var(--text-secondary);
-            margin-top: 0.2rem;
-        }
-
-        .impact-content h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 1.25rem;
-        }
-
-        .impact-content p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
+            letter-spacing: -1px;
             margin-bottom: 1.5rem;
+        }
+
+        .technology-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             line-height: 1.8;
         }
 
-        .impact-list {
+        .tech-list {
             list-style: none;
             margin-bottom: 2rem;
         }
 
-        .impact-list li {
+        .tech-list li {
             display: flex;
-            align-items: center;
-            gap: 0.875rem;
-            padding: 0.875rem 0;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--glass-border);
-            font-size: 1rem;
         }
 
-        .impact-list li:last-child {
+        .tech-list li:last-child {
             border-bottom: none;
         }
 
         .check-icon {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             background: var(--gradient-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(230, 153, 11, 0.3);
+            margin-top: 2px;
         }
 
-        /* CTA Section */
-        .cta {
-            padding: 6rem 4rem;
-            position: relative;
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            color: var(--primary-dark);
         }
 
-        .cta-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .cta-card {
+        .technology-visual {
             background: var(--glass-bg-light);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .tech-stat {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-stat:hover {
+            border-color: rgba(230, 153, 11, 0.3);
+            background: rgba(230, 153, 11, 0.05);
+        }
+
+        .tech-stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+        }
+
+        .tech-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            padding: 6rem 4rem;
+        }
+
+        .cta-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
             padding: 4rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(230, 153, 11, 0.08) 0%, transparent 50%);
-            animation: rotateBg 30s linear infinite;
-        }
-
-        .cta-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        }
-
-        @keyframes rotateBg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
         }
 
         .cta h2 {
             font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 800;
             letter-spacing: -1px;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .cta h2 .highlight {
-            background: var(--gradient-orange);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent-orange);
         }
 
         .cta p {
@@ -1028,9 +881,9 @@
             flex-wrap: wrap;
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         .footer {
-            padding: 3.5rem 4rem 1.5rem;
+            padding: 4rem 4rem 2rem;
             border-top: 1px solid var(--glass-border);
             background: rgba(10, 25, 37, 0.5);
         }
@@ -1040,21 +893,21 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 3rem;
+            gap: 4rem;
             margin-bottom: 3rem;
         }
 
         .footer-brand p {
             color: var(--text-secondary);
-            margin-top: 1rem;
-            max-width: 280px;
-            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            max-width: 300px;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .footer-column h4 {
             font-weight: 700;
             margin-bottom: 1.25rem;
-            color: var(--text-primary);
             font-size: 1rem;
         }
 
@@ -1081,7 +934,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--glass-border);
         }
 
@@ -1096,8 +949,8 @@
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             border-radius: 10px;
@@ -1110,13 +963,29 @@
         }
 
         .social-link:hover {
-            background: var(--glass-hover);
+            background: var(--accent-orange);
             border-color: var(--accent-orange);
-            color: var(--accent-orange);
-            box-shadow: 0 0 20px rgba(230, 153, 11, 0.2);
+            color: var(--primary-dark);
         }
 
-        /* Responsive */
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -1137,8 +1006,12 @@
                 margin: 0 auto;
             }
 
-            .impact-grid {
+            .technology-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-content {
@@ -1155,12 +1028,16 @@
                 display: none;
             }
 
-            .hero, .features, .impact, .cta, .footer, .video-section {
+            .hero, .features, .cta, .footer, .video-section, .technology, .stats-section {
                 padding: 3rem 1.5rem;
             }
 
-            .features-grid {
+            .stats-grid, .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                gap: 2rem;
             }
 
             .cta-card {
@@ -1174,17 +1051,10 @@
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
                 text-align: center;
             }
 
-            .impact-number {
-                font-size: 3.5rem;
-            }
-
-            .calc-result-value {
-                font-size: 2.25rem;
-            }
         }
     </style>
 </head>
@@ -1192,62 +1062,57 @@
     <!-- Background -->
     <div class="bg-container">
         <div class="bg-gradient"></div>
-        <div class="floating-orb orb-1"></div>
-        <div class="floating-orb orb-2"></div>
-        <div class="floating-orb orb-3"></div>
-        <div class="grid-pattern"></div>
-        <div class="noise"></div>
     </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-content">
             <a href="#" class="logo">
-                <div class="logo-icon">N₂</div>
+                <div class="logo-icon">N<sub>2</sub></div>
                 <div class="logo-text">NCO<span>2</span></div>
             </a>
             <ul class="nav-links">
-                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#technology">Technology</a></li>
                 <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#video">Our Work</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-cta">Get Started</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="calculator">
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">
-                    <span>Leading Carbon Innovation</span>
-                </div>
-                <h1>Negative Carbon<br><span class="highlight">Solutions</span></h1>
-                <p>Pioneering breakthrough technologies to capture, store, and transform carbon emissions. Building a carbon-negative future for generations to come.</p>
+                <div class="hero-badge">Drone-Based Reforestation</div>
+                <h1>Restoring Ecosystems<br><span class="highlight">At Scale</span></h1>
+                <p>We combine autonomous drone technology, precision seedling delivery, and AI-powered monitoring to accelerate large-scale reforestation for mining, forestry, and carbon development sectors.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">
-                        <span>Start Your Journey</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <a href="#contact" class="btn-primary">
+                        <span>Request Consultation</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#video" class="btn-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
-                        </svg>
-                        <span>Watch Video</span>
+                    <a href="#technology" class="btn-secondary">
+                        <span>Our Technology</span>
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="calculator-card">
                     <div class="calculator-header">
-                        <div class="calculator-icon">🌳</div>
+                        <div class="calculator-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
                         <div>
-                            <div class="calculator-title">Reforestation Calculator</div>
-                            <div class="calculator-subtitle">Estimate your carbon offset potential</div>
+                            <div class="calculator-title">Carbon Offset Calculator</div>
+                            <div class="calculator-subtitle">Estimate your project impact</div>
                         </div>
                     </div>
                     <div class="calculator-content">
@@ -1257,26 +1122,26 @@
                         </div>
                         
                         <div class="calc-input-group" id="trees-input">
-                            <label class="calc-label">How many trees do you want to plant?</label>
+                            <label class="calc-label">Target tree count</label>
                             <div class="calc-input-wrapper">
-                                <input type="number" class="calc-input" id="tree-count" placeholder="10,000" value="10000" min="1">
+                                <input type="number" class="calc-input" id="tree-count" value="100000" min="1">
                                 <span class="calc-unit">trees</span>
                             </div>
-                            <input type="range" class="calc-slider" id="tree-slider" min="100" max="1000000" value="10000">
+                            <input type="range" class="calc-slider" id="tree-slider" min="1000" max="5000000" value="100000">
                         </div>
 
                         <div class="calc-input-group" id="area-input" style="display: none;">
-                            <label class="calc-label">How many square kilometers to reforest?</label>
+                            <label class="calc-label">Target area for reforestation</label>
                             <div class="calc-input-wrapper">
-                                <input type="number" class="calc-input" id="area-count" placeholder="5" value="5" min="0.1" step="0.1">
+                                <input type="number" class="calc-input" id="area-count" value="25" min="1" step="1">
                                 <span class="calc-unit">km²</span>
                             </div>
-                            <input type="range" class="calc-slider" id="area-slider" min="1" max="500" value="5">
+                            <input type="range" class="calc-slider" id="area-slider" min="1" max="1000" value="25">
                         </div>
 
                         <div class="calc-result">
-                            <div class="calc-result-label">Estimated Annual CO₂ Offset</div>
-                            <div class="calc-result-value" id="result-value">220</div>
+                            <div class="calc-result-label">Estimated Annual CO₂ Sequestration</div>
+                            <div class="calc-result-value" id="result-value">2,200</div>
                             <div class="calc-result-unit">tonnes CO₂ per year</div>
                         </div>
 
@@ -1286,11 +1151,10 @@
                                 <line x1="12" y1="16" x2="12" y2="12"/>
                                 <line x1="12" y1="8" x2="12.01" y2="8"/>
                             </svg>
-                            <span>Based on average tree absorption of 22kg CO₂/year and 400 trees per km²</span>
+                            <span>Based on USDA average absorption rate of 22kg CO₂/tree/year</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1298,18 +1162,17 @@
     <!-- Video Section -->
     <section class="video-section" id="video">
         <div class="video-container">
-            <div class="video-header">
-                <div class="section-label">Our Vision</div>
+            <div class="section-header reveal">
+                <div class="section-label">See It In Action</div>
                 <h2 class="section-title">Where Technology Meets Nature</h2>
-                <p class="section-desc">Discover how NCO2 is revolutionizing the fight against climate change.</p>
+                <p class="section-desc">Watch how our drone-based reforestation technology is restoring ecosystems across challenging environments.</p>
             </div>
-            <div class="video-card">
+            <div class="video-card reveal">
                 <div class="video-wrapper">
                     <iframe 
                         src="https://www.youtube.com/embed/qStpetnz75Y" 
-                        title="Where Technology meets Nature!" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="NCO2 Technology" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                     </iframe>
                 </div>
@@ -1317,142 +1180,231 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="solutions">
-        <div class="section-header">
-            <div class="section-label">Our Solutions</div>
-            <h2 class="section-title">Comprehensive Carbon Management</h2>
-            <p class="section-desc">End-to-end solutions designed to measure, reduce, and offset your carbon footprint with precision and transparency.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title">Carbon Analytics</h3>
-                <p class="feature-desc">Real-time monitoring and advanced analytics to track your emissions across all operations with unprecedented accuracy.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3 class="feature-title">Direct Air Capture</h3>
-                <p class="feature-desc">Cutting-edge technology that removes CO₂ directly from the atmosphere and stores it permanently underground.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌿</div>
-                <h3 class="feature-title">Nature-Based Solutions</h3>
-                <p class="feature-desc">Strategic reforestation and ecosystem restoration projects that sequester carbon while enhancing biodiversity.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⛓️</div>
-                <h3 class="feature-title">Carbon Credits</h3>
-                <p class="feature-desc">Verified, high-quality carbon credits from our portfolio of certified offset projects around the world.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📋</div>
-                <h3 class="feature-title">Compliance & Reporting</h3>
-                <p class="feature-desc">Automated reporting tools that ensure compliance with international standards and regulatory requirements.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3 class="feature-title">Strategy Consulting</h3>
-                <p class="feature-desc">Expert guidance to develop and implement your organization's path to net-zero emissions.</p>
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="partners-container">
+            <div class="partners-label">Trusted by Industry Leaders</div>
+            <div class="partners-grid">
+                <div class="partner-logo">RIO TINTO</div>
+                <div class="partner-logo">ORANO</div>
+                <div class="partner-logo">ULZII ENVIRONMENTAL</div>
+                <div class="partner-logo">MONGOLIA GOV</div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="impact" id="impact">
-        <div class="impact-container">
-            <div class="impact-grid">
-                <div class="impact-visual">
-                    <div class="impact-card-large">
-                        <div class="impact-number">2.4M<span class="impact-unit">+</span></div>
-                        <div class="impact-label">Tons of CO₂ Offset Since Launch</div>
-                        <div class="impact-metrics">
-                            <div class="metric-card">
-                                <div class="metric-value">500+</div>
-                                <div class="metric-label">Enterprise Clients</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">89%</div>
-                                <div class="metric-label">Client Retention</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">24/7</div>
-                                <div class="metric-label">Live Monitoring</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">ISO</div>
-                                <div class="metric-label">Certified</div>
-                            </div>
-                        </div>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
                     </div>
+                    <div class="stat-value" data-target="4">0</div>
+                    <div class="stat-label">Countries</div>
                 </div>
-                <div class="impact-content">
-                    <h2>Making a Real Difference</h2>
-                    <p>Our mission goes beyond carbon neutrality. We're building the infrastructure for a carbon-negative economy where businesses thrive while healing the planet.</p>
-                    <ul class="impact-list">
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-target="2400000">0</div>
+                    <div class="stat-label">Trees Planted</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-4V6"/>
+                            <path d="M14 10L21 3"/>
+                            <path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-target="85">0</div>
+                    <div class="stat-label">% Survival Rate</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-target="12">0</div>
+                    <div class="stat-label">Enterprise Partners</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="technology-container">
+            <div class="technology-grid">
+                <div class="technology-content reveal">
+                    <div class="section-label">Our Technology</div>
+                    <h2>Precision Reforestation Through Innovation</h2>
+                    <p>Traditional reforestation methods are slow, labor-intensive, and often achieve poor survival rates. Our integrated technology platform delivers superior results at scale.</p>
+                    <ul class="tech-list">
                         <li>
                             <div class="check-icon">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#152F45" stroke-width="3">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                             </div>
-                            <span>Verified carbon offsets with full traceability</span>
+                            <div>
+                                <strong>Autonomous Drone Fleet</strong><br>
+                                <span style="color: var(--text-secondary);">Precision seedling delivery across challenging terrain with GPS-guided accuracy</span>
+                            </div>
                         </li>
                         <li>
                             <div class="check-icon">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#152F45" stroke-width="3">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                             </div>
-                            <span>Science-based targets aligned with Paris Agreement</span>
+                            <div>
+                                <strong>Live Seedling Technology</strong><br>
+                                <span style="color: var(--text-secondary);">Engineered seed pods with nutrients and mycorrhizae for 85%+ survival rates</span>
+                            </div>
                         </li>
                         <li>
                             <div class="check-icon">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#152F45" stroke-width="3">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                             </div>
-                            <span>Transparent reporting for stakeholders</span>
-                        </li>
-                        <li>
-                            <div class="check-icon">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#152F45" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"/>
-                                </svg>
+                            <div>
+                                <strong>AI-Powered Monitoring</strong><br>
+                                <span style="color: var(--text-secondary);">Satellite and drone imagery analysis for growth tracking and MRV compliance</span>
                             </div>
-                            <span>Supporting local communities worldwide</span>
                         </li>
                     </ul>
-                    <a href="#" class="btn-primary">
-                        <span>View Our Projects</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <a href="#contact" class="btn-primary">
+                        <span>Learn More</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
+                <div class="technology-visual reveal">
+                    <div class="tech-stats">
+                        <div class="tech-stat">
+                            <div class="tech-stat-value">10x</div>
+                            <div class="tech-stat-label">Faster Than Manual</div>
+                        </div>
+                        <div class="tech-stat">
+                            <div class="tech-stat-value">60%</div>
+                            <div class="tech-stat-label">Cost Reduction</div>
+                        </div>
+                        <div class="tech-stat">
+                            <div class="tech-stat-value">85%</div>
+                            <div class="tech-stat-label">Survival Rate</div>
+                        </div>
+                        <div class="tech-stat">
+                            <div class="tech-stat-value">24/7</div>
+                            <div class="tech-stat-label">Remote Monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="solutions">
+        <div class="section-header reveal">
+            <div class="section-label">Solutions</div>
+            <h2 class="section-title">End-to-End Reforestation Services</h2>
+            <p class="section-desc">From site assessment to carbon credit verification, we provide comprehensive solutions for large-scale ecosystem restoration.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Site Assessment</h3>
+                <p class="feature-desc">Comprehensive soil analysis, species selection, and restoration planning using satellite data and on-ground surveys.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Drone Deployment</h3>
+                <p class="feature-desc">Precision seedling delivery using autonomous drones capable of planting thousands of trees per day across difficult terrain.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Growth Monitoring</h3>
+                <p class="feature-desc">AI-powered satellite and drone analysis to track survival rates, biomass growth, and ecosystem health in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Carbon Verification</h3>
+                <p class="feature-desc">Full MRV compliance and third-party carbon credit verification for regulatory and voluntary carbon markets.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Reporting Dashboard</h3>
+                <p class="feature-desc">Real-time project visibility with comprehensive reporting for stakeholders, investors, and regulatory compliance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Partnership Model</h3>
+                <p class="feature-desc">Flexible engagement models for mining reclamation, forestry companies, carbon developers, and government agencies.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-container">
-            <div class="cta-card">
-                <div class="cta-content">
-                    <h2>Ready to Go <span class="highlight">Carbon Negative?</span></h2>
-                    <p>Join the leading organizations already transforming their environmental impact with NCO2's comprehensive solutions.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn-primary">
-                            <span>Schedule Consultation</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="btn-secondary">
-                            <span>Download Whitepaper</span>
-                        </a>
-                    </div>
-                </div>
+    <section class="cta" id="contact">
+        <div class="cta-card reveal">
+            <h2>Ready to Scale Your <span class="highlight">Reforestation Goals?</span></h2>
+            <p>Partner with NCO2 to achieve your environmental restoration and carbon sequestration objectives with proven technology.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@nco2.com" class="btn-primary">
+                    <span>Schedule Consultation</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn-secondary">
+                    <span>Download Capability Statement</span>
+                </a>
             </div>
         </div>
     </section>
@@ -1462,36 +1414,35 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <div class="logo-icon">N₂</div>
+                    <div class="logo-icon">N<sub>2</sub></div>
                     <div class="logo-text">NCO<span>2</span></div>
                 </a>
-                <p>Pioneering negative carbon solutions for a sustainable future. Together, we're reversing climate change.</p>
+                <p>Pioneering drone-based reforestation technology for large-scale ecosystem restoration. Serving mining, forestry, and carbon development sectors worldwide.</p>
             </div>
             <div class="footer-column">
                 <h4>Solutions</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Carbon Analytics</a></li>
-                    <li><a href="#">Direct Air Capture</a></li>
-                    <li><a href="#">Carbon Credits</a></li>
-                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Site Assessment</a></li>
+                    <li><a href="#">Drone Deployment</a></li>
+                    <li><a href="#">Carbon Verification</a></li>
+                    <li><a href="#">Monitoring</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul class="footer-links">
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Projects</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Case Studies</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Resources</h4>
+                <h4>Contact</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="mailto:info@nco2.com">info@nco2.com</a></li>
+                    <li><a href="#">Press Inquiries</a></li>
+                    <li><a href="#">Partnerships</a></li>
                 </ul>
             </div>
         </div>
@@ -1499,18 +1450,13 @@
             <p>© 2025 NCO2. All rights reserved.</p>
             <div class="social-links">
                 <a href="#" class="social-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
                 </a>
                 <a href="#" class="social-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
             </div>
@@ -1518,17 +1464,13 @@
     </footer>
 
     <script>
-        // Navigation scroll effect
+        // Navigation scroll
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Calculator functionality
+        // Calculator
         const tabs = document.querySelectorAll('.calc-tab');
         const treesInput = document.getElementById('trees-input');
         const areaInput = document.getElementById('area-input');
@@ -1539,18 +1481,10 @@
         const resultValue = document.getElementById('result-value');
 
         let currentTab = 'trees';
-
-        // CO2 absorption constants
-        const CO2_PER_TREE_KG = 22; // kg CO2 per tree per year
-        const TREES_PER_KM2 = 400; // average trees per km²
-        const CO2_PER_KM2_TONNES = (TREES_PER_KM2 * CO2_PER_TREE_KG) / 1000; // tonnes CO2 per km² per year
+        const CO2_PER_TREE_KG = 22;
+        const TREES_PER_KM2 = 400;
 
         function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            } else if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'K';
-            }
             return num.toLocaleString();
         }
 
@@ -1562,96 +1496,82 @@
                 co2Tonnes = (trees * CO2_PER_TREE_KG) / 1000;
             } else {
                 const area = parseFloat(areaCount.value) || 0;
-                co2Tonnes = area * CO2_PER_KM2_TONNES;
+                co2Tonnes = (area * TREES_PER_KM2 * CO2_PER_TREE_KG) / 1000;
             }
             
             resultValue.textContent = formatNumber(Math.round(co2Tonnes));
-            
-            // Add animation
-            resultValue.style.transform = 'scale(1.05)';
-            setTimeout(() => {
-                resultValue.style.transform = 'scale(1)';
-            }, 150);
         }
 
-        // Tab switching
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 currentTab = tab.dataset.tab;
-                
-                if (currentTab === 'trees') {
-                    treesInput.style.display = 'block';
-                    areaInput.style.display = 'none';
-                } else {
-                    treesInput.style.display = 'none';
-                    areaInput.style.display = 'block';
-                }
-                
+                treesInput.style.display = currentTab === 'trees' ? 'block' : 'none';
+                areaInput.style.display = currentTab === 'area' ? 'block' : 'none';
                 calculateOffset();
             });
         });
 
-        // Tree input handlers
-        treeCount.addEventListener('input', () => {
-            treeSlider.value = treeCount.value;
-            calculateOffset();
-        });
-
-        treeSlider.addEventListener('input', () => {
-            treeCount.value = treeSlider.value;
-            calculateOffset();
-        });
-
-        // Area input handlers
-        areaCount.addEventListener('input', () => {
-            areaSlider.value = areaCount.value;
-            calculateOffset();
-        });
-
-        areaSlider.addEventListener('input', () => {
-            areaCount.value = areaSlider.value;
-            calculateOffset();
-        });
-
-        // Initial calculation
+        treeCount.addEventListener('input', () => { treeSlider.value = treeCount.value; calculateOffset(); });
+        treeSlider.addEventListener('input', () => { treeCount.value = treeSlider.value; calculateOffset(); });
+        areaCount.addEventListener('input', () => { areaSlider.value = areaCount.value; calculateOffset(); });
+        areaSlider.addEventListener('input', () => { areaCount.value = areaSlider.value; calculateOffset(); });
+        
         calculateOffset();
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        // Reveal animations
+        const revealElements = document.querySelectorAll('.reveal, .feature-card');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '-50px' });
 
-        // Observe feature cards
-        document.querySelectorAll('.feature-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
+        revealElements.forEach(el => revealObserver.observe(el));
 
-        // Smooth scroll for nav links
+        // Stats counter
+        const statValues = document.querySelectorAll('.stat-value[data-target]');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target);
+                    let current = 0;
+                    const duration = 2000;
+                    const steps = 60;
+                    let step = 0;
+                    
+                    const timer = setInterval(() => {
+                        step++;
+                        const progress = step / steps;
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        current = target * easeOut;
+                        
+                        if (step >= steps) {
+                            entry.target.textContent = formatNumber(target);
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = formatNumber(Math.floor(current));
+                        }
+                    }, duration / steps);
+                    
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statValues.forEach(el => statsObserver.observe(el));
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
