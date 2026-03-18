@@ -57,11 +57,10 @@
         }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
         .logo-icon {
-            width: 48px; height: 48px; background: var(--gradient-orange); border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 0.9rem; color: var(--primary-dark);
-            box-shadow: 0 4px 20px rgba(230, 153, 11, 0.3); transition: all 0.3s ease;
+            width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
         }
+        .logo-icon svg { width: 48px; height: 48px; }
         .logo:hover .logo-icon { transform: scale(1.05); }
         .logo-text { font-weight: 700; font-size: 1.5rem; color: var(--text-primary); }
         .logo-text span { color: var(--accent-orange); }
@@ -313,7 +312,31 @@
     <nav class="nav" id="nav">
         <div class="nav-content">
             <a href="#" class="logo">
-                <div class="logo-icon">N<sub>2</sub></div>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Drone body -->
+                        <rect x="18" y="8" width="12" height="8" rx="2" fill="#e6990b"/>
+                        <!-- Drone camera -->
+                        <circle cx="24" cy="18" r="3" fill="#e6990b"/>
+                        <line x1="24" y1="21" x2="24" y2="26" stroke="#e6990b" stroke-width="2" stroke-dasharray="2 2"/>
+                        <!-- Left arm -->
+                        <line x1="18" y1="10" x2="8" y2="6" stroke="#e6990b" stroke-width="2"/>
+                        <!-- Right arm -->
+                        <line x1="30" y1="10" x2="40" y2="6" stroke="#e6990b" stroke-width="2"/>
+                        <!-- Left propeller -->
+                        <ellipse cx="8" cy="5" rx="6" ry="2" fill="#e6990b"/>
+                        <!-- Right propeller -->
+                        <ellipse cx="40" cy="5" rx="6" ry="2" fill="#e6990b"/>
+                        <!-- Ground line -->
+                        <line x1="8" y1="38" x2="40" y2="38" stroke="#e6990b" stroke-width="2"/>
+                        <!-- Left tree -->
+                        <circle cx="14" cy="32" r="5" fill="#e6990b"/>
+                        <line x1="14" y1="37" x2="14" y2="38" stroke="#e6990b" stroke-width="2"/>
+                        <!-- Right tree -->
+                        <circle cx="34" cy="32" r="5" fill="#e6990b"/>
+                        <line x1="34" y1="37" x2="34" y2="38" stroke="#e6990b" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="logo-text">NCO<span>2</span></div>
             </a>
             <ul class="nav-links">
@@ -331,7 +354,7 @@
             <div class="hero-text">
                 <div class="hero-badge">Drone-Based Reforestation</div>
                 <h1>Restoring Ecosystems<br><span class="highlight">At Scale</span></h1>
-                <p>We combine autonomous drone technology, precision seedling delivery, and AI-powered monitoring to accelerate large-scale reforestation for mining, forestry, and carbon development sectors.</p>
+                <p>We combine DJI AGRAS drone technology with proprietary live seedling plugs to deliver precision reforestation at scale. Our proven methodology achieves 70-80% survival rates—3x better than traditional seed ball approaches.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">
                         <span>Request Consultation</span>
@@ -410,10 +433,9 @@
         <div class="partners-container">
             <div class="partners-label">Trusted by Industry Leaders</div>
             <div class="partners-grid">
+                <div class="partner-logo">UEC MONGOLIA</div>
+                <div class="partner-logo">OYU TOLGOI</div>
                 <div class="partner-logo">RIO TINTO</div>
-                <div class="partner-logo">ORANO</div>
-                <div class="partner-logo">ULZII ENVIRONMENTAL</div>
-                <div class="partner-logo">MONGOLIA GOV</div>
             </div>
         </div>
     </section>
@@ -433,7 +455,7 @@
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-4V6"/><path d="M14 10L21 3"/><path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg></div>
-                    <div class="stat-value" data-target="85">0</div>
+                    <div class="stat-value" data-target="75">0</div>
                     <div class="stat-label">% Survival Rate</div>
                 </div>
                 <div class="stat-card reveal">
@@ -451,19 +473,19 @@
                 <div class="technology-content reveal">
                     <div class="section-label">Our Technology</div>
                     <h2>Precision Reforestation Through Innovation</h2>
-                    <p>Traditional reforestation methods are slow, labor-intensive, and often achieve poor survival rates. Our integrated technology platform delivers superior results at scale.</p>
+                    <p>Traditional seed ball methods achieve only 20-30% emergence rates. Our integrated live seedling plug system, combined with ground preparation and drone-based irrigation, delivers consistent results even in harsh desert environments like the Gobi.</p>
                     <ul class="tech-list">
                         <li>
                             <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-                            <div><strong>Autonomous Drone Fleet</strong><br><span style="color: var(--text-secondary);">Precision seedling delivery across challenging terrain with GPS-guided accuracy</span></div>
+                            <div><strong>DJI AGRAS Drone Fleet</strong><br><span style="color: var(--text-secondary);">DJI AGRAS T100 drones delivering precision seedling placement across challenging terrain with GPS-guided accuracy</span></div>
                         </li>
                         <li>
                             <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-                            <div><strong>Live Seedling Technology</strong><br><span style="color: var(--text-secondary);">Engineered seed pods with nutrients and mycorrhizae for 85%+ survival rates</span></div>
+                            <div><strong>Live Seedling Technology</strong><br><span style="color: var(--text-secondary);">Proprietary plug system with specially formulated substrate achieving 70-80% survival rates vs 20-30% for seed balls</span></div>
                         </li>
                         <li>
                             <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-                            <div><strong>AI-Powered Monitoring</strong><br><span style="color: var(--text-secondary);">Satellite and drone imagery analysis for growth tracking and MRV compliance</span></div>
+                            <div><strong>Integrated Irrigation</strong><br><span style="color: var(--text-secondary);">Same drone fleet handles post-planting irrigation, covering 10 hectares per day with precision watering</span></div>
                         </li>
                     </ul>
                     <a href="#contact" class="btn-primary">
@@ -473,10 +495,10 @@
                 </div>
                 <div class="technology-visual reveal">
                     <div class="tech-stats">
-                        <div class="tech-stat"><div class="tech-stat-value">10x</div><div class="tech-stat-label">Faster Than Manual</div></div>
-                        <div class="tech-stat"><div class="tech-stat-value">60%</div><div class="tech-stat-label">Cost Reduction</div></div>
-                        <div class="tech-stat"><div class="tech-stat-value">85%</div><div class="tech-stat-label">Survival Rate</div></div>
-                        <div class="tech-stat"><div class="tech-stat-value">24/7</div><div class="tech-stat-label">Remote Monitoring</div></div>
+                        <div class="tech-stat"><div class="tech-stat-value">13K</div><div class="tech-stat-label">Seedlings Per Day</div></div>
+                        <div class="tech-stat"><div class="tech-stat-value">10ha</div><div class="tech-stat-label">Daily Coverage</div></div>
+                        <div class="tech-stat"><div class="tech-stat-value">75%</div><div class="tech-stat-label">Survival Rate</div></div>
+                        <div class="tech-stat"><div class="tech-stat-value">12</div><div class="tech-stat-label">Person Crew</div></div>
                     </div>
                 </div>
             </div>
@@ -541,7 +563,22 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <div class="logo-icon">N<sub>2</sub></div>
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="8" width="12" height="8" rx="2" fill="#e6990b"/>
+                            <circle cx="24" cy="18" r="3" fill="#e6990b"/>
+                            <line x1="24" y1="21" x2="24" y2="26" stroke="#e6990b" stroke-width="2" stroke-dasharray="2 2"/>
+                            <line x1="18" y1="10" x2="8" y2="6" stroke="#e6990b" stroke-width="2"/>
+                            <line x1="30" y1="10" x2="40" y2="6" stroke="#e6990b" stroke-width="2"/>
+                            <ellipse cx="8" cy="5" rx="6" ry="2" fill="#e6990b"/>
+                            <ellipse cx="40" cy="5" rx="6" ry="2" fill="#e6990b"/>
+                            <line x1="8" y1="38" x2="40" y2="38" stroke="#e6990b" stroke-width="2"/>
+                            <circle cx="14" cy="32" r="5" fill="#e6990b"/>
+                            <line x1="14" y1="37" x2="14" y2="38" stroke="#e6990b" stroke-width="2"/>
+                            <circle cx="34" cy="32" r="5" fill="#e6990b"/>
+                            <line x1="34" y1="37" x2="34" y2="38" stroke="#e6990b" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <div class="logo-text">NCO<span>2</span></div>
                 </a>
                 <p>Pioneering drone-based reforestation technology for large-scale ecosystem restoration. Serving mining, forestry, and carbon development sectors worldwide.</p>
